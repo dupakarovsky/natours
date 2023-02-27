@@ -1,0 +1,91 @@
+[{
+  "_id": {
+    "$oid": "63b42b9b6631d534ae14993f"
+  },
+  "review": "Amazing Tour!",
+  "rating": 4.9,
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1672752014993"
+    }
+  },
+  "tour": {
+    "$oid": "5c88fa8cf4afda39709c295a"
+  },
+  "user": {
+    "$oid": "639cb5ad8d6d990e09513a2b"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "63b42d6f6631d534ae149942"
+  },
+  "review": "Loved it!",
+  "rating": 4,
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1672752014993"
+    }
+  },
+  "tour": {
+    "$oid": "5c88fa8cf4afda39709c2961"
+  },
+  "user": {
+    "$oid": "639cb5ad8d6d990e09513a2b"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "63b4564d3a0b54321bc73afa"
+  },
+  "review": "Best tour in the world!",
+  "rating": 5,
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1672762627428"
+    }
+  },
+  "tour": {
+    "$oid": "5c88fa8cf4afda39709c295a"
+  },
+  "user": {
+    "$oid": "63a472ab9566633ed5c1260c"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "63b462d78d3be1b278272493"
+  },
+  "review": "Updated, but still could be better",
+  "rating": 3.5,
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1672766158505"
+    }
+  },
+  "tour": {
+    "$oid": "5c88fa8cf4afda39709c2966"
+  },
+  "user": {
+    "$oid": "63a472ab9566633ed5c1260c"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "63b75042a249d63e4e2e2394"
+  },
+  "review": "Great view of the sea",
+  "rating": 4.8,
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1672957790337"
+    }
+  },
+  "tour": {
+    "$oid": "5c88fa8cf4afda39709c2955"
+  },
+  "user": {
+    "$oid": "63a472ab9566633ed5c1260c"
+  },
+  "__v": 0
+}]

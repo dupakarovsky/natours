@@ -1,0 +1,76 @@
+[{
+  "_id": {
+    "$oid": "639cb5ad8d6d990e09513a2b"
+  },
+  "name": "Alita Abraham",
+  "email": "alita@abraham.com",
+  "role": "user",
+  "password": "$2a$12$g57DSBXDt83.kJN6P7kHFewzjOuik3p5c1U3AFHkFSPGxvBLJGPXS",
+  "__v": 0,
+  "passwordChangedAt": {
+    "$date": {
+      "$numberLong": "1671627111164"
+    }
+  },
+  "active": true
+},{
+  "_id": {
+    "$oid": "639cbeccb4bdd10f5168c147"
+  },
+  "name": "Natours Administrator",
+  "email": "admin@natours.com",
+  "role": "admin",
+  "password": "$2a$12$xPY45WM.CzxHOKWHZC6j9uBULwrbepvPW6.q8JtkB2RAtyhhLp2yK",
+  "__v": 0,
+  "active": true
+},{
+  "_id": {
+    "$oid": "63a310c971a43c536b6ddf0e"
+  },
+  "name": "Beltrold Buttercup",
+  "email": "beltrold@buttercup.com",
+  "role": "user",
+  "password": "$2a$12$wXW/4TKP/bDqdySlBN1rHe2WRnX..MGUeagUMJTgAar6/.M0MTZMm",
+  "__v": 0,
+  "active": false
+},{
+  "_id": {
+    "$oid": "63a45db524c25827352ae9ba"
+  },
+  "name": "Carly Cardenas",
+  "email": "carly@cardenas.com",
+  "role": "guide",
+  "password": "$2a$12$qxTRVOA/entZJQNEbIIGGuyDnL1hoD1Jtv6Hhgq9fSVqh08LxOQRK",
+  "active": true,
+  "__v": 0,
+  "passwordChangedAt": {
+    "$date": {
+      "$numberLong": "1671716950597"
+    }
+  }
+},{
+  "_id": {
+    "$oid": "63a472ab9566633ed5c1260c"
+  },
+  "name": "Don Damascus",
+  "email": "don@damascus.com",
+  "role": "user",
+  "password": "$2a$12$1GzPso80J1yWcPmBHY.xMOMYGiVjSuuMvXufWQSJTKjHmFe0dWbGu",
+  "active": true,
+  "__v": 0,
+  "passwordChangedAt": {
+    "$date": {
+      "$numberLong": "1671721709867"
+    }
+  }
+},{
+  "_id": {
+    "$oid": "63b31237087dd74f2297b290"
+  },
+  "name": "Erik Erikson",
+  "email": "erik@erikson.com",
+  "role": "lead-guide",
+  "password": "$2a$12$PlCrrTo//WuV6Xz25EjPg.nmM/C8Fx9SJavEvoQK8pFieti.YNIRq",
+  "active": true,
+  "__v": 0
+}]
