@@ -7,7 +7,7 @@
    "scripts": {
       "start": "node server.js",
       "dev": "nodemon server.js",
-      "prod": "SET NODE_ENV=production&&nodemon server.js ",
+      "prod": "SET NODE_ENV=production&&node server.js ",
       "debug": "ndb server.js",
       "import": "node ./dev-data/data/import-data.js",
       "rollup": "rollup --help",
