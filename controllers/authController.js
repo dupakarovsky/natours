@@ -19,11 +19,6 @@ const createSendToken = (user, statusCode, req, res) => {
       httpOnly: true,
    };
 
-   // Test for HTTPS connenctions
-   // Request header has the secure property or the headers has the 'x-forward-proto' value.
-   // set app.use in app.js
-
-   // if (process.env.NODE_ENV === "production") cookieOptions.secure = true;
    if (req.secure || req.headers["x-forwarded-proto"] === "https") cookieOptions.secure = true;
 
    user.password = undefined;

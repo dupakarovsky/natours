@@ -5,11 +5,6 @@ const app = require("./app");
 
 const port = process.env.PORT || 3000;
 
-// const server = app.listen(port, () => {
-//    console.log(`Express set to: ${process.env.NODE_ENV}...`);
-//    console.log(`Server running on port ${port}...`);
-// });
-
 process.on("unhandledRejection", (err) => {
    console.log("UNHANDLED REJECTION: 💥 Shutting down server...");
    console.log(err.name, err.message);
@@ -26,7 +21,13 @@ process.on("uncaughtException", (err) => {
    });
 });
 
-// CONNECT TO MONGO FIRST, BEFORE SERVING REQUESTS.
+process.on("SIGTERM", () => {
+   console.log("🕑 SIGTERM Received. Shutting down application");
+   server.close(() => {
+      console.log("Process terminated");
+   });
+});
+
 const DB = process.env.DATABASE.replace("<PASSWORD>", process.env.DATABASE_PASSWORD);
 mongoose.connect(DB).then(() => {
    console.log("DB connection successful. Beginning port listening...");
