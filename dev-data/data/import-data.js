@@ -22,11 +22,9 @@ const saveToMongo = async () => {
       await Tour.create(tours);
       await User.create(users, { validateBeforeSave: false });
       await Review.create(reviews);
-      console.log("Saving tours, users and reviews to database");
    } catch (err) {
       console.log(err);
    } finally {
-      console.log("Import completed");
       process.exit();
    }
 };
@@ -36,7 +34,7 @@ const deleteFromMongo = async () => {
       await Review.deleteMany();
       await User.deleteMany();
       await Tour.deleteMany();
-      console.log("Deleting all tours, users and reviews from database");
+      // console.log("Deleting all tours, users and reviews from database");
    } catch (err) {
       console.log(err);
    }

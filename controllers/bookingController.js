@@ -49,7 +49,6 @@ exports.createBookingCheckout = async (req, res, next) => {
 
       await Booking.create({ tour, user, price });
       const rootUrl = req.originalUrl.split("?")[0];
-      console.log("bookingController.createBookingCheckout:", rootUrl);
 
       res.redirect(rootUrl);
    } catch (err) {
@@ -83,6 +82,5 @@ const getTourImage = (coverImg) => {
    ];
    let img = coverImg.split("-")[1];
    const imgReturned = typeof +img !== "number" ? imagesArray.at(-1) : imagesArray.at(img - 1);
-   console.log("bookingController.getTourImage:", img, imgReturned);
    return imgReturned;
 };

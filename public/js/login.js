@@ -3,7 +3,7 @@ import { showAlert } from "./alerts";
 export const login = (email, password) => {
    const apiParams = {
       method: "POST",
-      url: `http://127.0.0.1:3000/api/v1/users/login`,
+      url: `/api/v1/users/login`,
       data: {
          email: email,
          password: password,
@@ -43,7 +43,7 @@ export const login = (email, password) => {
 export const logout = async () => {
    const apiParams = {
       method: "GET",
-      url: `http://127.0.0.1:3000/api/v1/users/logout`,
+      url: `/api/v1/users/logout`,
    };
 
    const timeout = function (timer) {

@@ -32,7 +32,6 @@ const login = (email, password) => {
          const postData = axios.request(params);
          const response = await Promise.race([postData, timeout(10)]);
          if (response.statusText !== "OK") throw new Error("Something went wrong!");
-         console.log(response);
 
          if (response.data.status === "success") {
             alert("Logged in successfully!");

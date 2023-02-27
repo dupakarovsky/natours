@@ -79,7 +79,7 @@ userSchema.pre("save", async function (next) {
    const hash = await bcrypt.hash(this.password, 12);
    this.password = hash;
    this.passwordConfirmation = undefined;
-   console.log("userModel.pre: ", this.password);
+   // console.log("userModel.pre: ", this.password);
 });
 
 userSchema.pre("save", function (next) {

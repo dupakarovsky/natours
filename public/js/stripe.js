@@ -7,9 +7,9 @@ export const bookTour = async (tourId) => {
       );
       const session = await axios.request({
          method: "GET",
-         url: `http://127.0.0.1:3000/api/v1/bookings/checkout-session/${tourId}`,
+         url: `/api/v1/bookings/checkout-session/${tourId}`,
       });
-      console.log("stripe.bookTour:", session);
+
       await stripe.redirectToCheckout({
          sessionId: session.data.session.id,
       });

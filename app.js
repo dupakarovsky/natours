@@ -7,6 +7,7 @@ const mongoSanitize = require("express-mongo-sanitize");
 const xss = require("xss-clean");
 const hpp = require("hpp");
 const AppError = require("./utils/appError");
+const compression = require("compression");
 
 const tourRouter = require("./routes/tourRoutes");
 const userRouter = require("./routes/userRoutes");
@@ -67,6 +68,8 @@ app.use(
       whitelist: ["duration", "ratingsQuantity", "ratingsAvarage", "maxGroupSize", "price", "difficulty"],
    })
 );
+
+app.use(compression());
 
 app.use((req, res, next) => {
    req.requestTime = new Date().toISOString();

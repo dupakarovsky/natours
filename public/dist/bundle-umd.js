@@ -1,7 +1,7 @@
 (function (factory) {
-   typeof define === 'function' && define.amd ? define(factory) :
-   factory();
-})((function () { 'use strict';
+   typeof define === "function" && define.amd ? define(factory) : factory();
+})(function () {
+   "use strict";
 
    //4) IMPORT AXIOS
    // Instead of using the CDN we'll use the imported npm module.
@@ -37,7 +37,6 @@
             const postData = axios.request(params);
             const response = await Promise.race([postData, timeout(10)]);
             if (response.statusText !== "OK") throw new Error("Something went wrong!");
-            console.log(response);
 
             if (response.data.status === "success") {
                alert("Logged in successfully!");
@@ -89,7 +88,12 @@
          }
       );
       // DEFINE MAP ICON
-      const mapIcon = L.divIcon({ iconSize: [32, 40], className: "marker", iconAnchor: [16, 40], popupAnchor: [0, -25] });
+      const mapIcon = L.divIcon({
+         iconSize: [32, 40],
+         className: "marker",
+         iconAnchor: [16, 40],
+         popupAnchor: [0, -25],
+      });
       // ADD A ZOOM CONTROL TO THE AMP
       L.control.zoom().setPosition("topright").addTo(map);
 
@@ -131,5 +135,4 @@
          login(email.value, password.value);
       });
    }
-
-}));
+});

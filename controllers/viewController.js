@@ -5,7 +5,6 @@ const User = require("../model/userModel");
 const Booking = require("../model/bookingModel");
 
 exports.getOverview = catchAsync(async (req, res, next) => {
-   console.log("viewController.getOverview");
    const tours = await Tour.find();
 
    res.status(200).render("overview", {
@@ -54,8 +53,6 @@ exports.getMyTours = catchAsync(async (req, res) => {
 });
 
 exports.updateUserData = catchAsync(async (req, res) => {
-   console.log("updateUserData:", req.body);
-
    const updatedUser = await User.findByIdAndUpdate(
       req.user.id,
       {

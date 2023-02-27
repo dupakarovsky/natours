@@ -13,7 +13,7 @@ const $3adf927435cf4518$export$de026b00723010c1 = (type, msg)=>{
 const $70af9284e599e604$export$596d806903d1f59e = (email, password)=>{
     const apiParams = {
         method: "POST",
-        url: `http://127.0.0.1:3000/api/v1/users/login`,
+        url: `/api/v1/users/login`,
         data: {
             email: email,
             password: password
@@ -50,7 +50,7 @@ const $70af9284e599e604$export$596d806903d1f59e = (email, password)=>{
 const $70af9284e599e604$export$a0973bcfe11b05c9 = async ()=>{
     const apiParams = {
         method: "GET",
-        url: `http://127.0.0.1:3000/api/v1/users/logout`
+        url: `/api/v1/users/logout`
     };
     const timeout = function(timer) {
         return new Promise((resolve, reject)=>{
@@ -121,7 +121,7 @@ const $bbe6f992b23ff191$export$4c5dd147b21b9176 = function(locations) {
 
 const $936fcc27ffb6bbb1$export$f558026a994b6051 = async (data, type)=>{
     try {
-        const url = type === "data" ? "http://127.0.0.1:3000/api/v1/users/updateMe" : "http://127.0.0.1:3000/api/v1/users/updateMyPassword";
+        const url = type === "data" ? "/api/v1/users/updateMe" : "/api/v1/users/updateMyPassword";
         const response = await axios.request({
             method: "PATCH",
             url: url,
@@ -140,9 +140,8 @@ const $6710bca62beba915$export$8d5bdbf26681c0c2 = async (tourId)=>{
         const stripe = Stripe("pk_test_51MbORHGd3fb1GXN5BnDRNDG7GZ8iBCKOMh8oJMpMxHjOnvw95UozlfoY0tEdebwcPiaBrgqJ8EcuPAUq0ye4E7f100lfZ6e1OL");
         const session = await axios.request({
             method: "GET",
-            url: `http://127.0.0.1:3000/api/v1/bookings/checkout-session/${tourId}`
+            url: `/api/v1/bookings/checkout-session/${tourId}`
         });
-        console.log("stripe.bookTour:", session);
         await stripe.redirectToCheckout({
             sessionId: session.data.session.id
         });

@@ -70,7 +70,6 @@ exports.getAll = (model) => {
    return catchAsync(async (req, res, next) => {
       let filter = {};
       if (req.params.id) filter = { tour: req.params.id };
-      console.log("tour id: ", req.params.id);
 
       const features = new APIFeatures(model.find(filter), req.query).filter().sort().limitFileds().paginate();
 

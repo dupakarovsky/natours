@@ -109,7 +109,7 @@ tourSchema.pre("save", function (next) {
 });
 
 tourSchema.post("save", function (document, next) {
-   console.log(`${document.name} tour was saved to the database.`);
+   // console.log(`${document.name} tour was saved to the database.`);
    next();
 });
 
@@ -128,7 +128,7 @@ tourSchema.pre(/^find/, function (next) {
 });
 
 tourSchema.post(/^find/, function (documents, next) {
-   console.log(`Query took ${Date.now() - this.startTime}ms to run`);
+   // console.log(`Query took ${Date.now() - this.startTime}ms to run`);
    next();
 });
 
