@@ -11,17 +11,20 @@ const User = require("../model/userModel");
    The function will create a booking in the database
 */
 const createWebhookBooking = async (session) => {
-   // 9.2) Create a variable to hold the tour id
-   const tour = session.client_reference_id;
+   try {
+      // 9.2) Create a variable to hold the tour id
+      const tour = session.client_reference_id;
+      // 9.3) Create a variable to hold the user. We'll need to query the database to get the user from their email. This will return the entire user object, but we only want the id
+      const user = (await User.findOne({ email: session.customer_email })).id;
+      // 9.4) Create a variable to store the price. To set in dollars, divide it by 100
+      const price = session.amount_total / 100;
+      // 9.1) Create a new booking using the user's id, price and tour id. The tour id is stored in the session data, in the client_reference_id variable. The user we can find by their email, which stored in the customer_email variable. The price we'll get from the line_items variable, which will need to be in dollars (not cents)
+      console.log(user, tour, price);
 
-   // 9.3) Create a variable to hold the user. We'll need to query the database to get the user from their email. This will return the entire user object, but we only want the id
-   const user = (await User.findOne({ email: session.customer_email })).id;
-
-   // 9.4) Create a variable to store the price. To set in dollars, divide it by 100
-   const price = session.line_items[0].price_data.unit_amount / 100;
-
-   // 9.1) Create a new booking using the user's id, price and tour id. The tour id is stored in the session data, in the client_reference_id variable. The user we can find by their email, which stored in the customer_email variable. The price we'll get from the line_items variable, which will need to be in dollars (not cents)
-   await Booking.create({ tour, user, price });
+      await Booking.create({ tour, user, price });
+   } catch (err) {
+      console.log(err);
+   }
 };
 
 // 10 ) COMMIT AND TEST IT OUT
@@ -113,6 +116,8 @@ exports.webhookCheckout = (req, res, next) => {
    //8.4) Check for the event type.
    if (event.type === "checkout.session.completed") {
       // If it's checkout.session.completed then execute a function to create a booking. This function will need the event data
+      console.log("calling createWebhookBooking");
+
       createWebhookBooking(event.data.object);
       res.status(200).json({ received: true }); // send a response back to Stripe
    }
