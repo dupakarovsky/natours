@@ -2,8 +2,6 @@ import { login, logout } from "./login";
 import { displayMap } from "./appMap";
 import { updateSettings } from "./updateSettings";
 import { bookTour } from "./stripe";
-// 5.1) IMPORT THE ALERTS FUNCTION
-import { alerts } from "../../controllers/viewController";
 import { showAlert } from "./alerts";
 
 const map = document.querySelector("#map");
@@ -71,11 +69,5 @@ if (userPaswordForm)
       document.querySelector(".btn--save-password").textContent = "SAVE PASSWORD";
    });
 
-// 5.1) Check if alert data property is defined.
 const alertMessage = document.querySelector("body").dataset.alert;
-// if so, execute the showAlert function with the message
 if (alertMessage) showAlert("success", alertMessage);
-// finaly we'll update the showAlert function to add a default time for the alert to be displayed.
-// goto alerts.js
-
-// 6) COMPILE, COMMIT AND TEST
