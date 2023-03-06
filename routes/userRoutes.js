@@ -24,6 +24,3 @@ router.route("/").get(userController.getAllUsers).post(userController.createUser
 router.route("/:id").get(userController.getUser).patch(userController.updateUser).delete(userController.deleteUser);
 
 module.exports = router;
-
-// 5) TEST IT OUT
-// We'll update the user aarav and change his image photo. Login as the user in the website. Then run the UPDATE ME request on the API.

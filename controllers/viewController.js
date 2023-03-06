@@ -4,6 +4,20 @@ const AppError = require("../utils/appError");
 const User = require("../model/userModel");
 const Booking = require("../model/bookingModel");
 
+//4) ADD THE ALERTS MIDDLEWARE
+// Here si just set to booking. But we could use this middleware to set up different alert messages by simply chaning the queyry string value
+exports.alerts = (req, res, next) => {
+   //4.1) Get the alert valeu from the query string comming from Stripe succes_url
+   const alert = req.query.alert;
+   if (alert === "booking") {
+      //4.2) Add the alert property to the locals object, which will become avaiable in the template
+      res.locals.alert = "Your booking was successful. Please check you email for details.";
+   }
+   next();
+};
+// now go to index.js to read the data-alert variable in the html and then display it.
+// goto index.js
+
 exports.getOverview = catchAsync(async (req, res, next) => {
    const tours = await Tour.find();
 
